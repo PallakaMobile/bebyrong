@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/color1</color>
+    <color name="colorPrimaryDark">@color/color1</color>
+    <color name="colorAccent">@color/color1</color>
+    <color name="background">@color/color5</color>
+
+    <!--Color Palette-->
+    <color name="primary">#2F816B</color>
+    <color name="green">#57C974</color>
+    <color name="green_1">#3FE4BC</color>
+    <color name="blue">#087EF7</color>
+    <color name="red">#F71827</color>
+    <color name="pink">#FF667D</color>
+    <color name="blue_soft">#C4F3FF</color>
+    <color name="white_soft">#F0F0F0</color>
+    <color name="gray">#C9C9C9</color>
+
+    <!--Text Color-->
+    <color name="dark">#3A3E44</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="white50">#80FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="color1">#127D8A</color>
+    <color name="color2">#1E9465</color>
+    <color name="color3">#00C569</color>
+    <color name="color4">#90F48E</color>
+    <color name="color5">#F4F5F7</color>
+    <color name="color6">#95989A</color>
+    <color name="color7">#000000</color>
+    <color name="color8">#4D000000</color>
+
+    <color name="bg_shimmer">#CDCDCD</color>
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="ps.bebyrong.data.model.response.ResponseNewsComment.DataItem" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="@dimen/dp36"
+            android:layout_height="@dimen/dp36"
+            app:imageRound="@{item.gambar}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin_half"
+            android:layout_toEndOf="@+id/iv_profile"
+            android:text="@{item.nama}"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="@dimen/default_margin_half"
+            android:layout_toStartOf="@+id/tv_time"
+            android:layout_toEndOf="@+id/iv_profile"
+            android:text="@{item.isi}" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_margin_half"
+            android:layout_marginRight="@dimen/default_margin_half"
+            android:text="@{item.waktu}"
+            android:textColor="@color/gray" />
+    </RelativeLayout>
+</layout>

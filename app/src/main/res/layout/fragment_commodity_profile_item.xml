@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="ps.bebyrong.data.model.response.ResponseFormersProduct.DataItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_content"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp120"
+                app:imageGrid="@{data.gambar}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="@{data.produk}"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_toEndOf="@+id/iv_content"
+                android:minLines="2"
+                android:text="@{data.stok}"
+                android:textColor="@color/color3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_stock"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_toEndOf="@+id/iv_content"
+                android:minLines="2"
+                android:text="@{data.tanggalPanen}"
+                android:textSize="@dimen/text_size_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_desc"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:background="@drawable/bg_rounded_green"
+                android:paddingLeft="@dimen/default_margin"
+                android:paddingTop="@dimen/dp5"
+                android:paddingRight="@dimen/default_margin"
+                android:paddingBottom="@dimen/dp5"
+                android:text="@{data.status}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

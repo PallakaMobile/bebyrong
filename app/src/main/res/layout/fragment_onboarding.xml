@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/section_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp175"
+            android:layout_marginBottom="@dimen/dp20"
+            android:scaleType="fitCenter"
+            android:src="@drawable/page_1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/section_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="@string/onboard_title2"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/text_size_extra_large"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/section_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp20"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/default_margin_half"
+            android:paddingStart="@dimen/dp40"
+            android:text="@string/onboard_message2"
+            android:paddingEnd="@dimen/dp40"
+            android:textColor="@color/color6" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

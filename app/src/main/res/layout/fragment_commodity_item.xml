@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_content"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/dark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="Cabai"
+                android:textSize="@dimen/text_size_large" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="10 Kelompok Tani"
+                android:textColor="@color/color2" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_logo"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@+id/iv_content"
+                android:layout_below="@+id/tv_sub_title"
+                android:layout_margin="@dimen/default_margin_half"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

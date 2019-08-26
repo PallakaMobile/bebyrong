@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dataCategory"
+            type="ps.bebyrong.data.model.response.ResponseNews.DataItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardViews"
+        android:layout_width="@dimen/slider_size"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_content"
+                android:layout_width="@dimen/dp64"
+                android:layout_height="@dimen/dp64"
+                android:background="@color/dark"
+                app:imageGrid="@{dataCategory.gambar}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:minLines="4"
+                android:maxLines="4"
+                android:text="@{dataCategory.judul}"
+                android:textSize="@dimen/text_size_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="@{dataCategory.waktu}"
+                android:textSize="@dimen/text_size_small" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginStart="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/tv_time"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="@color/color3"
+                android:gravity="center"
+                android:paddingLeft="@dimen/default_margin_half"
+                android:paddingTop="@dimen/dp2"
+                android:paddingRight="@dimen/default_margin_half"
+                android:paddingBottom="@dimen/dp2"
+                android:text="@{dataCategory.kategori}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_extra_small" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_toEndOf="@+id/tv_sub_title"
+                android:drawableLeft="@drawable/ic_comment"
+                android:drawablePadding="@dimen/dp6"
+                android:text="@{dataCategory.jumlahKomentar}"
+                android:textSize="@dimen/text_size_small" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

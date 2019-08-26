@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/home_dest">
+
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="ps.bebyrong.ui.fragment.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/act_news_detail"
+            app:destination="@+id/news_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/act_commodity_tab"
+            app:destination="@+id/commodity_tab_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/act_stock_market_detail_dest"
+            app:destination="@+id/stock_market_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+        <action
+            android:id="@+id/act_price_detail_dest"
+            app:destination="@+id/price_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/news_dest"
+        android:name="ps.bebyrong.ui.fragment.news.NewsFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_news">
+
+        <action
+            android:id="@+id/act_news_detail"
+            app:destination="@+id/news_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/news_detail_dest"
+        android:name="ps.bebyrong.ui.fragment.news.category.detail.NewsDetailFragment"
+        android:label="@string/price"
+        tools:layout="@layout/fragment_news_detail">
+        <action
+            android:id="@+id/next_action"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/commodity_dest"
+        android:name="ps.bebyrong.ui.fragment.commodity.CommodityFragment"
+        android:label="@string/commodity"
+        tools:layout="@layout/fragment_commodity">
+
+        <action
+            android:id="@+id/act_commodity_tab"
+            app:destination="@+id/commodity_tab_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/commodity_tab_dest"
+        android:name="ps.bebyrong.ui.fragment.commodity.info.CommodityInfoTab"
+        android:label="@string/commodity"
+        tools:layout="@layout/fragment_commodity_tab">
+
+        <action
+            android:id="@+id/act_commodity_profile"
+            app:destination="@+id/commodity_profile_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/commodity_profile_dest"
+        android:name="ps.bebyrong.ui.fragment.commodity.profile.CommodityProfileFragment"
+        android:label="@string/commodity"
+        tools:layout="@layout/fragment_commodity_profile" />
+
+    <fragment
+        android:id="@+id/stock_dest"
+        android:name="ps.bebyrong.ui.fragment.stock.StockFragment"
+        android:label="@string/stock"
+        tools:layout="@layout/fragment_stock">
+
+        <action
+            android:id="@+id/act_stock_market_detail_dest"
+            app:destination="@+id/stock_market_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/stock_market_detail_dest"
+        android:name="ps.bebyrong.ui.fragment.stock.detail.MarketDetailFragment"
+        android:label="@string/stock_info"
+        tools:layout="@layout/fragment_stock_market_detail" />
+
+    <fragment
+        android:id="@+id/price_dest"
+        android:name="ps.bebyrong.ui.fragment.price.PriceFragment"
+        android:label="@string/price"
+        tools:layout="@layout/fragment_price">
+
+        <action
+            android:id="@+id/act_price_detail_dest"
+            app:destination="@+id/price_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/price_detail_dest"
+        android:name="ps.bebyrong.ui.fragment.price.detail.PriceDetailFragment"
+        android:label="@string/price_detail"
+        tools:layout="@layout/fragment_price_detail">
+        <action
+            android:id="@+id/act_stock_market_detail_dest"
+            app:destination="@+id/stock_market_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/about_dest"
+        android:name="ps.bebyrong.ui.fragment.home.about.FragmentAbout"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about" />
+</navigation>

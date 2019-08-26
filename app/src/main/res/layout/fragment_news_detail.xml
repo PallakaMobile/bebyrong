@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ps.bebyrong.ui.fragment.news.category.detail.NewsDetailViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:loadingVisibility="@{viewModel.isLoading}"
+            shimmer:duration="800">
+
+            <!-- Adding 7 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:visibility="gone"
+            app:contentVisibility="@{viewModel.isContent}">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin_half"
+                    android:text="@{viewModel.detailNews.judul}"
+                    android:textSize="@dimen/text_size_extra_large"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin_half"
+                    android:text="@{viewModel.detailNews.waktu}"
+                    android:textColor="@color/color6"
+                    android:textSize="@dimen/text_size_small" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp175"
+                    android:layout_margin="@dimen/default_margin_half"
+                    android:background="@color/color6"
+                    app:imageGrid="@{viewModel.detailNews.gambar}"
+                    app:layout_collapseMode="parallax" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin_half"
+                    android:textSize="@dimen/text_size_medium"
+                    app:htmlToText="@{viewModel.detailNews.isi}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/ic_share"
+                    android:drawablePadding="@dimen/default_margin_half"
+                    android:text="@{viewModel.detailNews.jmlShare.equals(`0`) ?  ``: viewModel.detailNews.jmlShare}" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_margin_half"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_comment_count"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textSize="@dimen/text_size_medium" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/default_margin_half" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin_half"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:contentVisibility="@{viewModel.isContent}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_comment"
+                style="@style/EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:background="@drawable/bg_rounded"
+                android:hint="@string/write_comment"
+                android:inputType="textShortMessage"
+                android:padding="@dimen/default_margin_half" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_send"
+                android:layout_width="@dimen/dp36"
+                android:layout_height="@dimen/dp36"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/default_margin_half"
+                android:clickable="true"
+                android:src="@drawable/ic_send" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

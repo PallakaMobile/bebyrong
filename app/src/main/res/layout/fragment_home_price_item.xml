@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardViews"
+        android:layout_width="@dimen/slider_size"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_content"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:background="@color/dark"
+                android:transitionName="imageNews" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="Title"
+                android:transitionName="title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:drawablePadding="@dimen/default_margin_half"
+                android:text="Rp.10.000 - Rp.12.800"
+                android:textColor="@color/color3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_label_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="@string/market_location"
+                android:textSize="@dimen/text_size_small" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_market"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_label_location"
+                android:layout_marginLeft="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:orientation="horizontal" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_height">150dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_margin_half">8dp</dimen>
+
+    <!--Font Size-->
+    <dimen name="text_size_extra_small">8.0sp</dimen>
+    <dimen name="text_size_small">10.0sp</dimen>
+    <dimen name="text_size_medium">12.0sp</dimen>
+    <dimen name="text_size_normal">14.0sp</dimen>
+    <dimen name="text_size_large">16.0sp</dimen>
+    <dimen name="text_size_large_x">22.0sp</dimen>
+    <dimen name="text_size_extra_large">24.0sp</dimen>
+    <dimen name="text_size_extra_large2">28.0sp</dimen>
+    <dimen name="text_size_extra_large3">32.0sp</dimen>
+    <dimen name="text_size_extra_large4">36.0sp</dimen>
+    <dimen name="text_size_extra_large5">45.0sp</dimen>
+    <dimen name="text_size_extra_large6">54.0sp</dimen>
+
+    <!--progressbar-->
+    <dimen name="dp45">45dp</dimen>
+    <dimen name="dp128">128dp</dimen>
+
+    <dimen name="dp30">30dp</dimen>
+    <dimen name="dp36">36dp</dimen>
+    <dimen name="dp50">50dp</dimen>
+    <dimen name="dp100">100dp</dimen>
+    <dimen name="dp64">64dp</dimen>
+    <dimen name="dp110">110dp</dimen>
+    <dimen name="dp170">170dp</dimen>
+    <dimen name="dp175">175dp</dimen>
+    <dimen name="dp120">120dp</dimen>
+    <dimen name="dp2">2dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp6">6dp</dimen>
+    <dimen name="dp140">140dp</dimen>
+    <dimen name="dp40">40dp</dimen>
+    <dimen name="dp1">1dp</dimen>
+    <dimen name="slider_size">290dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp250">250dp</dimen>
+    <dimen name="dp12">12dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+
+</resources>

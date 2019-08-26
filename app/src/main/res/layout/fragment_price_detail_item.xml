@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_content"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp120"
+                android:background="@color/gray"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="Giant"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginStart="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/default_margin_half"
+                android:gravity="center|left"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="Ini alamat"
+                android:textSize="@dimen/text_size_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_address"
+                android:layout_marginStart="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:text="Rp.5000/kg"
+                android:textColor="@color/color3"
+                android:textSize="@dimen/text_size_medium" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_location"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp36"
+                android:layout_below="@+id/tv_price"
+                android:layout_marginStart="@dimen/default_margin_half"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/iv_content"
+                android:backgroundTint="@color/color3"
+                android:text="@string/location"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                app:icon="@drawable/ic_direct_location"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/default_margin" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp36"
+                android:layout_below="@+id/tv_price"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin_half"
+                android:layout_toEndOf="@+id/btn_location"
+                android:backgroundTint="@color/color6"
+                android:text="@string/stock_info"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                app:icon="@drawable/ic_stock_info"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/default_margin" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

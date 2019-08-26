@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ps.bebyrong.ui.fragment.news.category.NewsCategoryViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/default_margin_half"
+            android:gravity="center"
+            android:hint="@string/search_news"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/default_margin"
+            android:paddingTop="@dimen/default_margin_half"
+            android:paddingRight="@dimen/default_margin"
+            android:paddingBottom="@dimen/default_margin_half"
+            android:singleLine="true"
+            app:contentVisibility="@{viewModel.isContent}" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:loadingVisibility="@{viewModel.isLoading}"
+            shimmer:duration="800">
+
+            <!-- Adding 7 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+
+                <include layout="@layout/layer_shimmer_placeholder" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:disconnect="@{viewModel.isDisconnect}">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:src="@drawable/ic_disconnect" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/disconnect"
+                android:textColor="@color/gray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/dp50"
+            android:gravity="center"
+            android:text="@string/no_data"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_extra_large"
+            android:visibility="gone"
+            app:noDataVisibility="@{viewModel.isNoData}" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:id="@+id/swipe_layout"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_weight="1"
+                android:visibility="visible"
+                app:contentVisibility="@{viewModel.isContent}" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_load_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pb_load_more"
+                android:layout_width="@dimen/dp36"
+                android:layout_height="@dimen/dp36"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/default_margin_half" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/load_more"
+                android:textSize="@dimen/text_size_small" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
